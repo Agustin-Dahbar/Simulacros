@@ -67,6 +67,12 @@ public class SimulacroMesetas {
         // Fin del while que evalúa los numeros para descubrir si son mesetas. 
         //Saldremos de el cuando se ingrese un 0. Al ingresar < 100 se repetirá el pedido, al ingresar > 100 || < 0 continuará el programa.
         
+        //Sin esto, la ultima meseta no se evaluará como la posible más grande, solo las anteriores.
+        if (largoMeseta > mesetaMasLarga) 
+        {           
+            mesetaMasLarga = largoMeseta; // Sobreescribimos la info de la meseta más larga, almacenamos la cantidad de números que posee.
+        }
+        
         //Si el usuario quiso salir del programa entrando 0, devolvemos la cantidad de mesetas.
         System.out.println("La cantidad de mesetas fue de " + cantidadMesetas);
         
