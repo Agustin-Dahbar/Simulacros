@@ -25,19 +25,17 @@ public class KartingSimulacro {
 		String ganadorVuelta = "undefined"; 
 		
 		//Un do..while sería más "correcto" pero me gusta usar whiles y simplemente asegurarme con las inicializaciones de que no haya problemas y se ejecute el programa.
-		
-		//While que recorrerá el total de la carrera, hasta q un auto llegue a 5 vueltas o haya un accidente.
-		while(vueltasRojo < 5 && vueltasVerde < 5 && huboAccidente == false) 
-		{
+		 
+	  do {
 			//Instrucción y almacen de entrada del usuario.
-			System.out.println("Dime que karting dió la vuelta en esta iteración");
-			resultado = scanner.next().charAt(0);
+			System.out.println("Dime que karting dió la vuelta en esta iteración. No importa la capitalización.");
+			resultado = Character.toUpperCase(scanner.next().charAt(0)); //Convertimos las minúsculas entradas en mayúsculas.
 			
 			//Con un while comprobamos que haya ingresado una de las 3 opciones disponibles.
 			while(!(resultado == 'R' || resultado == 'V' || resultado == 'F')) 
 			{
 				System.out.println("Ingresa un char válido por favor. [R, V, F]");
-				resultado = scanner.next().charAt(0);
+				resultado = Character.toUpperCase(scanner.next().charAt(0)); 
 			}
 			
 				//Si uno de los autos dió la vuelta
@@ -53,7 +51,7 @@ public class KartingSimulacro {
 						pianitosPisadosRojoTotal += pianitosPisados;
 						ganadorVuelta = "rojo";
 					}
-					else 
+					else
 					{
 						vueltasVerde++;
 						pianitosPisadosVerdeTotal += pianitosPisados;
@@ -77,8 +75,8 @@ public class KartingSimulacro {
 						System.out.println(""); //Espacio para separar ingresos. No lo ubicamos en el while para que no se ejecute ese espacio en caso de F y devolver "Indefinido" quedá feo con espacio ese caso.
 					}
 				}
-		}
-		//Fin del while por ende del programa por accidente o ganador. (vueltasX == 5 o huboAccidente == true;)
+		  }
+				while(vueltasRojo < 5 && vueltasVerde < 5 && huboAccidente == false); //While que recorrerá el total de la carrera, hasta q un auto llegue a 5 vueltas o haya un accidente.
 		
 		
 		//Devolvemos la información final con los datos obtenidos en el while. (Ganador o accidente) 3 opciones posibles.
@@ -102,14 +100,23 @@ public class KartingSimulacro {
 			double promedioPianitosRojo = pianitosPisadosRojoTotal/vueltasRojo;
 			double promedioPianitosVerde = pianitosPisadosVerdeTotal/vueltasVerde;
 			
+			
 			//Evaluamos que promedio es mejor y devolvemos ese.
 			if(promedioPianitosRojo > promedioPianitosVerde) 
 			{
 				System.out.println("El mejor promedio fue de " + promedioPianitosVerde + " pianitos y le corresponde al auto verde");
 			}
-			else 
+			else if(promedioPianitosVerde > promedioPianitosRojo)
 			{
 				System.out.println("El mejor promedio fue de " + promedioPianitosRojo + " pianitos y le corresponde al auto rojo.");
+			}
+			else if(promedioPianitosVerde == promedioPianitosRojo)
+			{
+				System.out.println("El promedio fue empate.");
+			}
+			else 
+			{
+				System.out.println("Uno de los dos autos no completó ni siquiera una vuelta, por lo tanto no podemos sacar su promedio con divisor de 0.");
 			}
 		}
 		
