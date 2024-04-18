@@ -14,7 +14,7 @@ public class KartingSimulacro {
 		char resultado = 0;
 		//Almacenará en cada iteración los pianitosPisados por el ganador de la vuelta.
 		int pianitosPisados = 0; 		
-		//Contadores de vueltas para cada auto y de contadores de pianitos pisados.
+		//Contadores de vueltas para cada auto y de pianitos pisados.
 		double vueltasRojo = 0;
 		double vueltasVerde = 0; 
 		int pianitosPisadosRojoTotal = 0;
@@ -24,7 +24,6 @@ public class KartingSimulacro {
 		//Ganador de cada vuelta. Tendrá un valor por cada iteración del bucle.
 		String ganadorVuelta = "undefined"; 
 		
-		//Un do..while sería más "correcto" pero me gusta usar whiles y simplemente asegurarme con las inicializaciones de que no haya problemas y se ejecute el programa.
 		 
 	  do {
 			//Instrucción y almacen de entrada del usuario.
