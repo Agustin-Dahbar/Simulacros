@@ -22,9 +22,10 @@ public class KartingSimulacro {
 		//Variable booleana que almacenará si hubo un accidente o no.
 		boolean	huboAccidente = false; 
 		//Ganador de cada vuelta. Tendrá un valor por cada iteración del bucle.
-		String ganadorVuelta = "undefined"; 
+		String ganadorVuelta = "";
 		
 		 
+		//Do while..
 	  do {
 			//Instrucción y almacen de entrada del usuario.
 			System.out.println("Dime que karting dió la vuelta en esta iteración. No importa la capitalización.");
@@ -49,6 +50,13 @@ public class KartingSimulacro {
 						vueltasRojo++;
 						pianitosPisadosRojoTotal += pianitosPisados;
 						ganadorVuelta = "rojo";
+						System.out.println("El auto que dió la vuelta fue el " + ganadorVuelta);
+						
+						if(pianitosPisados >= 0) 
+						{
+							System.out.println("Pisó el pianito " + pianitosPisados + " veces");	
+							System.out.println(""); //Espacio para separar ingresos. No lo ubicamos en el while para que no se ejecute ese espacio en caso de F y devolver "Indefinido" quedá feo con espacio ese caso.
+						}
 					}
 					else
 					{
@@ -66,16 +74,10 @@ public class KartingSimulacro {
 				//Devolvemos que auto ganó la vuelta de esta iteración y cuántos pianitos pisó.. Lo hacemos acá y no en el primer if porque en ese momento aún no habiamos obtenido el valor de ganadorVuelta.
 				if(!huboAccidente) 
 				{
-					System.out.println("El auto que dió la vuelta fue el " + ganadorVuelta);
 					
-					if(pianitosPisados >= 0) 
-					{
-						System.out.println("Pisó el pianito " + pianitosPisados + " veces");	
-						System.out.println(""); //Espacio para separar ingresos. No lo ubicamos en el while para que no se ejecute ese espacio en caso de F y devolver "Indefinido" quedá feo con espacio ese caso.
-					}
 				}
 		  }
-				while(vueltasRojo < 5 && vueltasVerde < 5 && huboAccidente == false); //While que recorrerá el total de la carrera, hasta q un auto llegue a 5 vueltas o haya un accidente.
+				while(vueltasRojo < 5 && vueltasVerde < 5 && !huboAccidente); //While que recorrerá el total de la carrera, hasta q un auto llegue a 5 vueltas o haya un accidente.
 		
 		
 		//Devolvemos la información final con los datos obtenidos en el while. (Ganador o accidente) 3 opciones posibles.

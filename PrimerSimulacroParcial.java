@@ -50,7 +50,7 @@ public class PrimerSimulacroParcial {
 			
 			
 			//Ahora averiguaremos 2 de los 3 requisitos.
-			if(minutosPrueba < 15) //Si hizo menos de 15 minutos.
+			if(minutosPrueba < 15) //Si hizo menos de 15 minutos. 
 			{
 				menosDe15Minutos = true;
 			}
@@ -63,7 +63,7 @@ public class PrimerSimulacroParcial {
 			//y que Mas20 nunca suceda y se mantenga en false, ya que inicializamos ambas en FALSE.
 			
 		}
-		while(dias < 10 && !masDe20Minutos);
+		while(dias < 10 && masDe20Minutos);
 		//While externo que ejecutará el programa. Siempre y cuando estemos entre los 10 días de prueba ( dias == [0..9] )
 		//y el atleta no se haya demorado más de 20 minutos en alguna prueba ya que eso descartaria que este apto.
 				

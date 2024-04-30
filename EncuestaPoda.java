@@ -9,8 +9,8 @@ public class EncuestaPoda {
 		Scanner scanner = new Scanner(System.in);
 		
 		//Variables que almacenarán las entradas de los participantes.
-		String nombreJugadorA = "undefined";
-		String nombreJugadorB = "undefined";
+		String nombreJugadorA = "";
+		String nombreJugadorB = "";
 		int rondasMaximas = 0;
 		int numeroA = 0;
 		int numeroB = 0;
