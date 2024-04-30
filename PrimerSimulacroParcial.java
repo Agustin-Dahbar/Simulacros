@@ -61,6 +61,7 @@ public class PrimerSimulacroParcial {
 			
 			//Necesitamos que menos15 se cumple al menos una vez es decir finalice con TRUE.
 			//y que Mas20 nunca suceda y se mantenga en false, ya que inicializamos ambas en FALSE.
+			
 		}
 		while(dias < 10 && !masDe20Minutos);
 		//While externo que ejecutará el programa. Siempre y cuando estemos entre los 10 días de prueba ( dias == [0..9] )
